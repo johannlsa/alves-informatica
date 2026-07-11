@@ -1,0 +1,248 @@
+body {
+  background: url('../img/modern-office-design-with-computer-equipment-inside-generated-by-ai.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+  
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Camada escura para dar contraste ao seu cartão */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.7); /* Filtro escuro por cima da imagem */
+  z-index:-1;
+}
+        :root {
+            --primary-green: #00a859;
+            --bg-dark: #0f172a;
+            --bg-card: #ffffff;
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --accent-color: #38bdf8;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+        }
+       /*.bg-blue{background-color: #060930;*/
+        .bg-blue{background-color: #102A45;
+        }
+    .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+
+      /*--------------------*/
+     .service-card {
+            perspective: 1000px;
+            height: 400px;
+        }
+
+        .service-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            
+        }
+
+        .service-card:hover .service-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .service-card-front,
+        .service-card-back {
+            position: absolute;
+            width: 88%;
+            height: 98%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .service-card-front {
+          /*  background: linear-gradient(45deg, #6366f1, #8b5cf6);*/
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .service-card-back {
+            background: white;
+            color: #1f2937;
+            transform: rotateY(180deg);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hover-lift {
+            transition: transform 0.2s;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+      .stat-box {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+        }
+         .hero-section {
+            background: linear-gradient(135deg, rgba(15, 32, 39, 0.6 ));
+           
+            color: white;
+            padding: 100px 0;
+        }
+
+
+       /* ================================================================== */
+        /* BOTÃO FLUTUANTE (Fica visível logo ao carregar a página)           */
+        /* ================================================================== */
+        .wpp-flutuante {
+            position: fixed;
+            bottom: 20px;
+            right: 20px; /* Alinhado à direita */
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .wpp-flutuante:hover {
+            transform: scale(1.1);
+        }
+
+        /* ================================================================== */
+        /* MODAL DO FORMULÁRIO (Começa escondido)                            */
+        /* ================================================================== */
+        .modal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+            display: none; /* Escondido por padrão */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        /* Botão para fechar o formulário (X) */
+        .btn-fechar {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+            color: #888;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        .btn-fechar:hover { color: #333; }
+
+        h2 {
+            margin-top: 0;
+            color: #075e54;
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #444; }
+        input, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        textarea { height: 90px; resize: none; }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #25d366;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        button[type="submit"]:hover { background-color: #128c7e; }
