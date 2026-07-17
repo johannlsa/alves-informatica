@@ -34,7 +34,11 @@
         aria-label="Tenth navbar example"
       >
         <div class="container-fluid">
-            <img src="img/logomarca.png" style="width: 70px;height: 50px;">
+           <div class="d-flex flex-column align-items-center">
+    <img src="img/logomarca.png" style="width: 70px; height: 50px;">
+    <!-- m-0 remove a margem padrão do parágrafo para não dar muito espaço -->
+    <p class="text-white m-0">Alves Tecnologia</p>
+  </div>
           <button
             class="navbar-toggler rounded-0 border-0 text-white"
             type="button"
@@ -59,7 +63,6 @@
               </li>
               <li class="nav-item"><a class="nav-link" href="#servicos">especialidades</a></li>
               <li class="nav-item"><a class="nav-link" href="#sobre">Por que nós?</a></li>
-              <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
               <!--<li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -304,10 +307,11 @@
  </section>
 
 
-  <!-- Botão que dispara o Modal -->
-  <button type="button" class="btn btn-light px-4 py-2 mt-3 rounded-0 d-block mx-auto" data-bs-toggle="modal" data-bs-target="#galeriaModal">
-    Abrir Galeria de Trabalhos
-  </button>
+
+
+<button type="button" class="btn btn-outline-light btn-lg px-5 py-3 mt-3 rounded-0 d-block mx-auto fw-bold fs-5 btn-led-branco-vazado" data-bs-toggle="modal" data-bs-target="#galeriaModal">
+  Abrir Galeria de Trabalhos
+</button>
 
  <!-- Sobre / Por que escolher a Alves Tecnologia -->
   <div class="container mt-5">
@@ -530,15 +534,20 @@
             <!-- Coluna 1: Sobre a Empresa -->
             <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
                 <h5 class="text-uppercase mb-4 font-weight-bold text-success">Alves Tecnologia</h5>
-                <p>Inovação, desenvolvimento e soluções digitais sob medida para o seu negócio evoluir.</p>
+                <p>Soluções inteligentes em T.I. sob medida.</p>
             </div>
 
             <!-- Coluna 2: Links Úteis -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h5 class="text-uppercase mb-4 font-weight-bold text-success">Links</h5>
-                <p><a href="#" class="text-light text-decoration-none hover-link">Home</a></p>
-                <p><a href="#" class="text-light text-decoration-none hover-link">Serviços</a></p>
-                <p><a href="#" class="text-light text-decoration-none hover-link">Portfólio</a></p>
+                <p><a href="#" class="text-light text-decoration-none hover-link">Inicio</a></p>
+                <p><a href="#servicos" class="text-light text-decoration-none hover-link">Especialidades</a></p>
+                <p><a href="#sobre" class="text-light text-decoration-none hover-link">Por que nós?</a></p>
+           
+          
+
+
+                 
             </div>
 
             <!-- Coluna 3: Contato -->
@@ -555,7 +564,7 @@
         <!-- Linha de Direitos Autorais e Redes Sociais -->
         <div class="row align-items-center">
             <div class="col-md-7 col-lg-8 text-center text-md-start">
-                <p class="mb-0">
+                <p class="mb-0" style="font-size: 10px;">
                     &copy; <span id="anoAtual"></span> <strong>Alves Tecnologia</strong>. Todos os direitos reservados.
                 </p>
             </div>
