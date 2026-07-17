@@ -1,5 +1,5 @@
 body {
-  background: url('../img/modern-office-design-with-computer-equipment-inside-generated-by-ai.jpg') no-repeat center center fixed;
+  background: url('../img/pngtree-a-satellite-orbits-above-the-earth-s-cloud-layer-casting-shadow-image_20578996.jpg') no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
   margin: 0;
@@ -246,3 +246,28 @@ body::before {
             gap: 10px;
         }
         button[type="submit"]:hover { background-color: #128c7e; }
+        
+
+   .btn-led-branco-vazado {
+  background-color: transparent !important; /* Sem preenchimento */
+  border: 2px solid #ffffff !important; /* Borda branca pura */
+  color: #ffffff !important; /* Texto em branco */
+  transition: all 0.3s ease-in-out;
+  
+  /* Efeito de brilho LED Branco (borda, interno e texto) */
+  box-shadow: 0 0 5px #ffffff, 
+              inset 0 0 5px #ffffff; /* Brilho leve para dentro do botão */
+  text-shadow: 0 0 5px #ffffff; /* Texto também brilha */
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.btn-led-branco-vazado:hover {
+  background-color: #ffffff !important; /* Preenche de branco ao passar o mouse */
+  color: #000000 !important; /* Letras ficam pretas para contraste */
+  
+  /* O LED acende com força total */
+  box-shadow: 0 0 10px #ffffff, 
+              0 0 25px #ffffff, 
+              0 0 40px #ffffff;
+  text-shadow: none; /* Remove o brilho do texto já que o fundo agora é claro */
+}
