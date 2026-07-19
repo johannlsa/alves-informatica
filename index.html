@@ -4,43 +4,153 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
-    <meta
-      name="author"
-      content="Johann Lindembergh"
-    />
+    <meta name="author" content="Johann Lindembergh" />
     <meta name="generator" content="Astro v5.13.2" />
     <title>Alves Tecnologia</title>
-    <link
-      rel="canonical"
-      href="https://getbootstrap.com/docs/5.3/examples/navbars/"
-    />
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbars/" />
     <script src="assets/js/color-modes.js"></script>
     <script src="libs/font-awesome/6.5.1/js/all.min.js"></script>
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
-   <!-- CSS do GLightbox (Novo) -->
-  <link rel="stylesheet" href="css/glightbox.min.css" />
-    
-    
+    <!-- CSS do GLightbox (Novo) -->
+    <link rel="stylesheet" href="css/glightbox.min.css" />
+     
     <style>
-  
+        /* --- Customização da Barra de Menu (Navbar) --- */
+        .bg-blue {
+            background-color: #ffffff !important; /* Fundo branco para destacar a logo escura */
+            box-shadow: 0 4px 12px rgba(12, 60, 92, 0.05); /* Sombra suave para sofisticação */
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* Ajuste fino para os links não sumirem no fundo branco */
+        .navbar-light .navbar-nav .nav-link {
+            color: #1e293b !important;
+            font-weight: 500;
+        }
+        .navbar-light .navbar-nav .nav-link.active {
+            color: #0C3C5C !important;
+            font-weight: 700;
+        }
+
+        /* Card de visualização simulando o cartão de visita */
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 10px 25px rgba(12, 60, 92, 0.08);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza a logo no bloco */
+        }
+
+        .label {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-bottom: 1px solid #e2e8f0;
+            width: 100%;
+            padding-bottom: 8px;
+            text-align: center;
+        }
+
+        /* --- Bloco da Logo Principal --- */
+        .logo-wrapper {
+            display: inline-flex;
+            flex-direction: column;
+            width: auto; /* Ajusta ao tamanho do texto de cima */
+        }
+
+        .brand-alves {
+            display: flex;
+            align-items: baseline;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.2rem; /* Reduzido levemente para harmonizar no menu fixo */
+            color: #0C3C5C; /* Cor principal no resto da palavra */
+            line-height: 1;
+            letter-spacing: -0.01em;
+        }
+
+        /* Container do caractere "A" cortado */
+        .split-a {
+            position: relative;
+            display: inline-block;
+            width: 32px; /* Ajustado proporcionalmente */
+            height: 36px; /* Ajustado proporcionalmente */
+            margin-right: 2px;
+        }
+
+        /* Metade Superior do A */
+        .split-a .a-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #1e293b; 
+            clip-path: polygon(0 0, 100% 0, 100% 75%, 0 25%);
+            transform: translate(-1px, -1px); 
+        }
+
+        /* Metade Inferior do A */
+        .split-a .a-bottom {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #0C3C5C; 
+            clip-path: polygon(0 29%, 100% 79%, 100% 100%, 0 100%);
+            transform: translate(1px, 1px);
+        }
+
+        /* --- Alinhamento do Subtítulo --- */
+        .tecnologia-aligned {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.45rem; /* Ajustado proporcionalmente */
+            color: #0C3C5C; 
+            text-transform: uppercase;
+            margin-top: 4px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%; 
+        }
     </style>
   </head>
   <body>
    
       <nav
-        class="navbar navbar-expand-lg navbar-dark bg-blue fixed-top"
+        class="navbar navbar-expand-lg navbar-light bg-blue fixed-top"
         aria-label="Tenth navbar example"
       >
         <div class="container-fluid">
-           <div class="d-flex flex-column align-items-center">
-    <img src="img/logomarca.png" style="width: 70px; height: 50px;">
-    <!-- m-0 remove a margem padrão do parágrafo para não dar muito espaço -->
-    <p class="text-white m-0">Alves Tecnologia</p>
-  </div>
+           <div class="d-flex flex-column align-items-center me-3">
+             <!-- Imagem opcional comentada ou ajustada para o lado se necessário -->
+             <!-- <img src="img/logomarca.png" style="width: 70px; height: 50px;"> -->
+             
+             <!-- Estrutura da Logo -->
+             <div class="logo-wrapper">
+                <!-- Nome Superior -->
+                <div class="brand-alves">
+                    <div class="split-a">
+                        <span class="a-top">A</span>
+                        <span class="a-bottom">A</span>
+                    </div>
+                    <span>LVES</span>
+                </div>
+                
+                <!-- Nome Inferior Alinhado de Ponta a Ponta -->
+                <div class="tecnologia-aligned">
+                    <span>T</span><span>E</span><span>C</span><span>N</span><span>O</span><span>L</span><span>O</span><span>G</span><span>I</span><span>A</span>
+                </div>
+             </div>
+             <!-- Fim da Logo -->
+          </div>
+
           <button
-            class="navbar-toggler rounded-0 border-0 text-white"
+            class="navbar-toggler rounded-0 border-0 text-dark"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarsExample08"
@@ -48,37 +158,19 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-          <i class="fa-solid fa-bars"></i>
-            <!--<span class="navbar-toggler-icon"></span>-->
+            <i class="fa-solid fa-bars"></i>
           </button>
+
           <div
             class="collapse navbar-collapse justify-content-md-center"
             id="navbarsExample08"
           >
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
-                  >Inicio</a
-                >
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item"><a class="nav-link" href="#servicos">especialidades</a></li>
               <li class="nav-item"><a class="nav-link" href="#sobre">Por que nós?</a></li>
-              <!--<li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  >Dropdown</a
-                >
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </li>-->
             </ul>
           </div>
         </div>
@@ -86,520 +178,377 @@
       
     </main>
 
-
-<!-- Nossos serviços -->
-</br>
-<header id="inicio" class="hero-section text-center">
+    <!-- Nossos serviços -->
+    <br/>
+    <header id="inicio" class="hero-section text-center" style="margin-top: 90px;">
         <div class="container">
             <h1 class="display-4 fw-bold text-white">Soluções em T.I.</h1>
             <p class="lead text-white">Infraestrutura, desenvolvimento e segurança para o seu negócio.</p>
-          <!--  <a href="#servicos" class="btn btn-primary btn-lg mt-3">Ver Serviços</a>-->
         </div>
     </header>
 
-    </br></br></br></br>
-<section class="services" id="servicos">
-      
-   
-<div class="container py-5">
-    <div class="row g-4">
-        <!-- Service Card 1 -->
-        <div class="col-md-4">
-            <div class="service-card hover-lift">
-                <div class="service-card-inner">
-                    <div class="service-card-front">
-                       <img src="img/aplicacoes.png" style="width: 19rem;">
-                        <!--<div class="icon-wrapper">
-                         
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-code-slash" viewBox="0 0 16 16">
-                                <path
-                                    d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
-                            </svg>
-                        </div>-->
-                      <!--  <h3 class="h4 mb-2">Web Development</h3>
-                        <p class="text-center mb-0">Modern solutions for your digital presence</p>-->
-                    </div>
-                    <div class="service-card-back">
-                        <h5 class="mb-3">Alguns de nossos serviços</h5>
-                        <ul class="feature-list">
-                            <li>• Site institucional</li>
-                            <li>• Landing Page</li>
-                            <li>• Manutenção de sites</li>
-                            <li>• Desenvolvimento de aplicações personalizadas</li>
-                        </ul>
-                        <!--<button class="btn btn-primary mt-4">Learn More</button>-->
+    <br/><br/><br/><br/>
+    <section class="services" id="servicos">
+    <div class="container py-5">
+        <div class="row g-4">
+            <!-- Service Card 1 -->
+            <div class="col-md-4">
+                <div class="service-card hover-lift">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                           <img src="img/aplicacoes.png" style="width: 19rem;">
+                        </div>
+                        <div class="service-card-back">
+                            <h5 class="mb-3">Alguns de nossos serviços</h5>
+                            <ul class="feature-list">
+                                <li>• Site institucional</li>
+                                <li>• Landing Page</li>
+                                <li>• Manutenção de sites</li>
+                                <li>• Desenvolvimento de aplicações personalizadas</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Service Card 2 -->
-        <div class="col-md-4">
-            <div class="service-card hover-lift">
-                <div class="service-card-inner">
-                    <div class="service-card-front">
-                       <img src="img/cftv.png" style="width: 19rem;">
-                        <!--<div class="icon-wrapper">
-                         
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-code-slash" viewBox="0 0 16 16">
-                                <path
-                                    d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
-                            </svg>
-                        </div>-->
-                      <!--  <h3 class="h4 mb-2">Web Development</h3>
-                        <p class="text-center mb-0">Modern solutions for your digital presence</p>-->
-                    </div>
-                    <div class="service-card-back">
-                        <h5 class="mb-3">Proteja o que realmente Importa</h5>
-                        <ul class="feature-list">
-                            <li>• Inibição de Perdas e sinistros  </li>
-                            <li>• Auditoria e Provas Visuais</li>
-                            <li>• Suporte Técnico Dedicado</li>
-                            <li>• Alertas Inteligentes no Celular</li>
-                            <li>• Valorização do Imóvel</li>
-                        </ul>
-                        <!--<button class="btn btn-primary mt-4">Learn More</button>-->
+            <!-- Service Card 2 -->
+            <div class="col-md-4">
+                <div class="service-card hover-lift">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                           <img src="img/cftv.png" style="width: 19rem;">
+                        </div>
+                        <div class="service-card-back">
+                            <h5 class="mb-3">Proteja o que realmente Importa</h5>
+                            <ul class="feature-list">
+                                <li>• Inibição de Perdas e sinistros  </li>
+                                <li>• Auditoria e Provas Visuais</li>
+                                <li>• Suporte Técnico Dedicado</li>
+                                <li>• Alertas Inteligentes no Celular</li>
+                                <li>• Valorização do Imóvel</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-         <!-- Service Card 3 -->
-        <div class="col-md-4">
-            <div class="service-card hover-lift">
-                <div class="service-card-inner">
-                    <div class="service-card-front">
-                       <img src="img/infraestrutura.png" style="width: 19rem;">
-                        <!--<div class="icon-wrapper">
-                         
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-code-slash" viewBox="0 0 16 16">
-                                <path
-                                    d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
-                            </svg>
-                        </div>-->
-                      <!--  <h3 class="h4 mb-2">Web Development</h3>
-                        <p class="text-center mb-0">Modern solutions for your digital presence</p>-->
-                    </div>
-                    <div class="service-card-back">
-                        <h5 class="mb-3">Foco em Alta Performance e Estabilidade</h5>
-                        <ul class="">
-                            <li> Organização e Identificação (Adeus "Ninho de Ratos")t</li>
-                            <li> Máximo Desempenho e Velocidade</li>
-                            <li> Segurança de Rede e Segmentação (VLANs)</li>
-                            <li> Escalabilidade (Pronto para Crescer)</li>
-                            <li> Redução drástica de Lentidão e Ruído</li>
-                            <li> Centralização de Ativos</li>
-                        </ul>
-                        <!--<button class="btn btn-primary mt-4">Learn More</button>-->
+             <!-- Service Card 3 -->
+            <div class="col-md-4">
+                <div class="service-card hover-lift">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                           <img src="img/infraestrutura.png" style="width: 19rem;">
+                        </div>
+                        <div class="service-card-back">
+                            <h5 class="mb-3">Foco em Alta Performance e Estabilidade</h5>
+                            <ul class="">
+                                <li> Organização e Identificação (Adeus "Ninho de Ratos")t</li>
+                                <li> Máximo Desempenho e Velocidade</li>
+                                <li> Segurança de Rede e Segmentação (VLANs)</li>
+                                <li> Escalabilidade (Pronto para Crescer)</li>
+                                <li> Redução drástica de Lentidão e Ruído</li>
+                                <li> Centralização de Ativos</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
- <!-- Service Card 4 -->
-        <div class="col-md-4">
-            <div class="service-card hover-lift">
-                <div class="service-card-inner">
-                    <div class="service-card-front">
-                       <img src="img/manutencao.png" style="width: 19rem;">
-                        <!--<div class="icon-wrapper">
-                         
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-code-slash" viewBox="0 0 16 16">
-                                <path
-                                    d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
-                            </svg>
-                        </div>-->
-                      <!--  <h3 class="h4 mb-2">Web Development</h3>
-                        <p class="text-center mb-0">Modern solutions for your digital presence</p>-->
-                    </div>
-                    <div class="service-card-back">
-                        <h5 class="mb-3">Alguns de nossos serviços</h5>
-                        <ul class="">
-                            <li>Formatação</li>
-                            <li>Limpeza</li>
-                            <li>Backup</li>
-                            <li>Atualização de drives</li>
-                            <li>Instalações de software</li>
-                            <li>Recuperação de arquivos</li>
-                            <li>Configuração de impressora</li>
-                            <li>Configuração de rede</li>
-                        </ul>
-                        <!--<button class="btn btn-primary mt-4">Learn More</button>-->
+            <!-- Service Card 4 -->
+            <div class="col-md-4">
+                <div class="service-card hover-lift">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                           <img src="img/manutencao.png" style="width: 19rem;">
+                        </div>
+                        <div class="service-card-back">
+                            <h5 class="mb-3">Alguns de nossos serviços</h5>
+                            <ul class="">
+                                <li>Formatação</li>
+                                <li>Limpeza</li>
+                                <li>Backup</li>
+                                <li>Atualização de drives</li>
+                                <li>Instalações de software</li>
+                                <li>Recuperação de arquivos</li>
+                                <li>Configuração de impressora</li>
+                                <li>Configuração de rede</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
- <!-- Service Card 5 -->
-        <div class="col-md-4 ">
-            <div class="service-card hover-lift">
-                <div class="service-card-inner">
-                    <div class="service-card-front">
-                       <img src="img/routerboard.png" style="width: 19rem;">
-                        <!--<div class="icon-wrapper">
-                         
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-code-slash" viewBox="0 0 16 16">
-                                <path
-                                    d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
-                            </svg>
-                        </div>-->
-                      <!--  <h3 class="h4 mb-2">Web Development</h3>
-                        <p class="text-center mb-0">Modern solutions for your digital presence</p>-->
-                    </div>
-                    <div class="service-card-back">
-                        <h5 class="mb-3">Alta Performance</h5>
-                        <ul class="feature-list">
-                            <li>• Alta Disponibilidade (Zero Down Time)</li>
-                            <li>• Aproveitamento Máximo da Banda</li>
-                            <li>• Continuidade de Negócios</li>
-                            <li>• Segmentação Inteligente de Tráfego</li>
-                            <li>• Gerenciamento Centralizado</li>
-                            
-                        </ul>
-                       <!-- <button class="btn btn-primary mt-4">Learn More</button>-->
+            <!-- Service Card 5 -->
+            <div class="col-md-4 ">
+                <div class="service-card hover-lift">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                           <img src="img/routerboard.png" style="width: 19rem;">
+                        </div>
+                        <div class="service-card-back">
+                            <h5 class="mb-3">Alta Performance</h5>
+                            <ul class="feature-list">
+                                <li>• Alta Disponibilidade (Zero Down Time)</li>
+                                <li>• Aproveitamento Máximo da Banda</li>
+                                <li>• Continuidade de Negócios</li>
+                                <li>• Segmentação Inteligente de Tráfego</li>
+                                <li>• Gerenciamento Centralizado</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
- <!-- Service Card 6 -->
-        <div class="col-md-4 ">
-            <div class="service-card hover-lift">
-                <div class="service-card-inner">
-                    <div class="service-card-front ">
-                       <img class="rounded" src="img/wireless.png" style="width: 19rem;">
-                        <!--<div class="icon-wrapper">
-                         
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-code-slash" viewBox="0 0 16 16">
-                                <path
-                                    d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
-                            </svg>
-                        </div>-->
-                      <!--  <h3 class="h4 mb-2">Web Development</h3>
-                        <p class="text-center mb-0">Modern solutions for your digital presence</p>-->
-                      
-                    </div>
-                    <div class="service-card-back">
-                        <!--<h4 class="mb-3">Our Expertise</h4>-->
-                        <ul class="">
-                            <li> Access Points profissionais</li>
-                            <li> Produtividade Sem Fio</li>
-                            <li> Roaming Fluido (Sem Quedas ao Caminhar)</li>
-                            <li> Alta Densidade de Usuários</li>
-                            <li> Estética e Organização</li>
-                            <li> Fim das Zonas Mortas (Pontos Cegos)</li>
-                            <li> Cobertura total e sem travamentos</li>
-                            
-                        </ul>
-                       <!--<button class="btn btn-primary mt-4">Learn More</button>-->
-                    </div>
-                </div>
-            </div>
-        </div>
 
+            <!-- Service Card 6 -->
+            <div class="col-md-4 ">
+                <div class="service-card hover-lift">
+                    <div class="service-card-inner">
+                        <div class="service-card-front ">
+                           <img class="rounded" src="img/wireless.png" style="width: 19rem;">
+                        </div>
+                        <div class="service-card-back">
+                            <ul class="">
+                                <li> Access Points profissionais</li>
+                                <li> Produtividade Sem Fio</li>
+                                <li> Roaming Fluido (Sem Quedas ao Caminhar)</li>
+                                <li> Alta Densidade de Usuários</li>
+                                <li> Estética e Organização</li>
+                                <li> Fim das Zonas Mortas (Pontos Cegos)</li>
+                                <li> Cobertura total e sem travamentos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
- </section>
+    </section>
 
+    <button type="button" class="btn btn-outline-light btn-lg px-5 py-3 mt-3 rounded-0 d-block mx-auto fw-bold fs-5 btn-led-branco-vazado" data-bs-toggle="modal" data-bs-target="#galeriaModal">
+      Abrir Galeria de Trabalhos
+    </button>
 
-
-
-<button type="button" class="btn btn-outline-light btn-lg px-5 py-3 mt-3 rounded-0 d-block mx-auto fw-bold fs-5 btn-led-branco-vazado" data-bs-toggle="modal" data-bs-target="#galeriaModal">
-  Abrir Galeria de Trabalhos
-</button>
-
- <!-- Sobre / Por que escolher a Alves Tecnologia -->
-  <div class="container mt-5">
-
-
-  
-    <section id="sobre" class="py-5 bg-light border-top border-bottom border-1 border-slate-100 rounded">
-        <div class="container py-4">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <!--<span class="text-primary fw-bold text-uppercase">Diferencial Alves Tecnologia</span>-->
-                    <h2 class="fw-extrabold display-6 mt-2 mb-4">Tecnologia com foco no crescimento do seu negócio</h2>
-                    <p class="text-muted mb-4">Não vendemos apenas equipamentos ou licenças. Nós projetamos infraestruturas eficientes que reduzem as interrupções na sua operação e aumentam a segurança geral.</p>
-                    
-                    <div class="row g-4">
-                        <div class="col-sm-6">
-                            <div class="stat-box">
-                                <h3 class="fw-extrabold text-primary mb-1">100%</h3>
-                                <p class="text-muted mb-0 small fw-semibold">Garantia em Serviços e Suporte</p>
+    <!-- Sobre / Por que escolher a Alves Tecnologia -->
+    <div class="container mt-5">
+        <section id="sobre" class="py-5 bg-light border-top border-bottom border-1 border-slate-100 rounded">
+            <div class="container py-4">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <h2 class="fw-extrabold display-6 mt-2 mb-4">Tecnologia com foco no crescimento do seu negócio</h2>
+                        <p class="text-muted mb-4">Não vendemos apenas equipamentos ou licenças. Nós projetamos infraestruturas eficientes que reduzem as interrupções na sua operação e aumentam a segurança geral.</p>
+                        
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <div class="stat-box">
+                                    <h3 class="fw-extrabold text-primary mb-1">100%</h3>
+                                    <p class="text-muted mb-0 small fw-semibold">Garantia em Serviços e Suporte</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="stat-box">
-                                <h3 class="fw-extrabold text-success mb-1">Zero</h3>
-                                <p class="text-muted mb-0 small fw-semibold">Incertezas na instalação</p>
+                            <div class="col-sm-6">
+                                <div class="stat-box">
+                                    <h3 class="fw-extrabold text-success mb-1">Zero</h3>
+                                    <p class="text-muted mb-0 small fw-semibold">Incertezas na instalação</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm p-4 bg-white" style="border-radius: 24px;">
-                        <h4 class="fw-bold mb-3 text-dark"><i class="fa-solid fa-shield-halved text-primary me-2"></i>Comprometimento com Qualidade</h4>
-                        <ul class="list-unstyled mb-0">
-                            <li class="d-flex align-items-start mb-3">
-                                <i class="fa-solid fa-circle-check text-success fs-5 me-3 mt-1"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Mapeamento Técnico Dedicado</h6>
-                                    <p class="text-muted small mb-0">Analisamos o seu espaço físico e a sua infraestrutura de rede antes de iniciar qualquer mudança.</p>
-                                </div>
-                            </li>
-                            <li class="d-flex align-items-start mb-3">
-                                <i class="fa-solid fa-circle-check text-success fs-5 me-3 mt-1"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Certificação das Redes e Câmeras</h6>
-                                    <p class="text-muted small mb-0">Testamos todos os equipamentos sob condições severas de uso para garantir estabilidade diária absoluta.</p>
-                                </div>
-                            </li>
-                            <li class="d-flex align-items-start">
-                                <i class="fa-solid fa-circle-check text-success fs-5 me-3 mt-1"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Integração ERP Dinâmica</h6>
-                                    <p class="text-muted small mb-0">Suas notas, faturamento e contas sincronizados de forma descomplicada.</p>
-                                </div>
-                            </li>
-
-                             <li class="d-flex align-items-start">
-                                <i class="fa-solid fa-circle-check text-success fs-5 me-3 mt-1"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Organização de Estoque Inteligente</h6>
-                                    <p class="text-muted small mb-0">Ache qualquer produto em segundos com nossa organização física e digital.</p>
-                                </div>
-                            </li>
-                        </ul>
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm p-4 bg-white" style="border-radius: 24px;">
+                            <h4 class="fw-bold mb-3 text-dark"><i class="fa-solid fa-shield-halved text-primary me-2"></i>Comprometimento com Qualidade</h4>
+                            <ul class="list-unstyled mb-0">
+                                <li class="d-flex align-items-start mb-3">
+                                    <i class="fa-solid fa-circle-check text-success fs-5 me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Mapeamento Técnico Dedicado</h6>
+                                        <p class="text-muted small mb-0">Analisamos o seu espaço físico e a sua infraestrutura de rede antes de iniciar qualquer mudança.</p>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-start mb-3">
+                                    <i class="fa-solid fa-circle-check text-success fs-5 me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Certificação das Redes e Câmeras</h6>
+                                        <p class="text-muted small mb-0">Testamos todos os equipamentos sob condições severas de uso para garantir estabilidade diária absoluta.</p>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-start">
+                                    <i class="fa-solid fa-circle-check text-success fs-5 me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Integração ERP Dinâmica</h6>
+                                        <p class="text-muted small mb-0">Suas notas, faturamento e contas sincronizados de forma descomplicada.</p>
+                                    </div>
+                                </li>
+                                 <li class="d-flex align-items-start mt-3">
+                                    <i class="fa-solid fa-circle-check text-success fs-5 me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Organização de Estoque Inteligente</h6>
+                                        <p class="text-muted small mb-0">Ache qualquer produto em segundos com nossa organização física e digital.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</div><!--#container-->
+        </section>
+    </div>
 
-<!--galeria---------------->
-<style>
-    /* Estilos essenciais para a galeria */
-    .img-fit {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-    .legenda-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
-      color: #ffffff;
-      padding: 15px 10px 8px 10px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      pointer-events: none; /* Deixa o clique passar para o link */
-    }
-    /* Estilo para indicar que o item é clicável */
-    .glightbox-galeria-item {
-      cursor: pointer;
-    }
-    
-  </style>
+    <!-- Galeria Estilos -->
+    <style>
+        .img-fit {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+        .legenda-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+          color: #ffffff;
+          padding: 15px 10px 8px 10px;
+          font-size: 0.85rem;
+          font-weight: 500;
+          pointer-events: none;
+        }
+        .glightbox-galeria-item {
+          cursor: pointer;
+        }
+    </style>
 
-
-
-  <!-- Modal Bootstrap -->
-  <div class="modal fade " id="galeriaModal" tabindex="-1" aria-labelledby="galeriaModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content rounded-0">
-        <div class="modal-header rounded-0">
-          <h5 class="modal-title" id="galeriaModalLabel">Nossos Trabalhos</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-        </div>
-        <div class="modal-body ">
-          <div class="row g-3" id="galeria-container">
-            <!-- JavaScript renderizará os itens aqui -->
+    <!-- Modal Bootstrap -->
+    <div class="modal fade " id="galeriaModal" tabindex="-1" aria-labelledby="galeriaModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content rounded-0">
+          <div class="modal-header rounded-0">
+            <h5 class="modal-title" id="galeriaModalLabel">Nossos Trabalhos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body ">
+            <div class="row g-3" id="galeria-container">
+              <!-- JavaScript renderizará os itens aqui -->
+            </div>
           </div>
         </div>
-        <!--<div class="modal-footer">
-          <button type="button" class="btn btn-secondary rounded-0" data-bs-dismiss="modal">Fechar</button>
-        </div>-->
       </div>
     </div>
-  </div>
-<!-- JS do GLightbox (Novo) -->
-  <script src="js/glightbox.min.js"></script>
-  <!-- JS do Bootstrap 5 -->
-  <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>-->
-  <!-- Nosso script da galeria -->
-  <script src="js/app.js"></script>
 
+    <script src="js/glightbox.min.js"></script>
+    <script src="js/app.js"></script>
 
-
-
-
-<!-- 1. O Botão flutuante que aparece logo de cara -->
-<div id="btnWhatsFlutuante" class="wpp-flutuante">
-    <i class="fa-brands fa-whatsapp"></i>
-</div>
-
-<!-- 2. A estrutura do Modal/Formulário (escondida no carregamento) -->
-<div id="modalFormulario" class="modal-container">
-    <div class="form-container">
-        <button class="btn-fechar" id="btnFecharModal">&times;</button>
-        <h2>Fale Conosco via WhatsApp</h2>
-        
-        <form id="whatsappForm">
-            <div class="form-group ">
-                <label for="nome">Nome:</label>
-                <input class="border-1 rounded-0" type="text" id="nome" required placeholder="Seu nome">
-            </div>
-            <div class="form-group">
-                <label for="email">E-mail:</label>
-                <input class="border-1 rounded-0" type="email" id="email" required placeholder="seu@email.com">
-            </div>
-            <div class="form-group">
-                <label for="mensagem">Como podemos ajudar?</label>
-                <textarea class="border-1 rounded-0" id="mensagem" required placeholder="Digite sua mensagem..."></textarea>
-            </div>
-            <button type="submit">
-                <i class="fa-brands fa-whatsapp"></i> Enviar Mensagem
-            </button>
-        </form>
+    <!-- WhatsApp Flutuante -->
+    <div id="btnWhatsFlutuante" class="wpp-flutuante">
+        <i class="fa-brands fa-whatsapp"></i>
     </div>
-</div>
 
-<script>
-    const btnWhatsFlutuante = document.getElementById('btnWhatsFlutuante');
-    const modalFormulario = document.getElementById('modalFormulario');
-    const btnFecharModal = document.getElementById('btnFecharModal');
-    const whatsappForm = document.getElementById('whatsappForm');
+    <div id="modalFormulario" class="modal-container">
+        <div class="form-container">
+            <button class="btn-fechar" id="btnFecharModal">&times;</button>
+            <h2>Fale Conosco via WhatsApp</h2>
+            <form id="whatsappForm">
+                <div class="form-group ">
+                    <label for="nome">Nome:</label>
+                    <input class="border-1 rounded-0" type="text" id="nome" required placeholder="Seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input class="border-1 rounded-0" type="email" id="email" required placeholder="seu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Como podemos ajudar?</label>
+                    <textarea class="border-1 rounded-0" id="mensagem" required placeholder="Digite sua mensagem..."></textarea>
+                </div>
+                <button type="submit">
+                    <i class="fa-brands fa-whatsapp"></i> Enviar Mensagem
+                </button>
+            </form>
+        </div>
+    </div>
 
-    // Passo 1: Ao clicar no botão flutuante, abre o formulário
-    btnWhatsFlutuante.addEventListener('click', function() {
-        modalFormulario.style.display = 'flex';
-    });
+    <script>
+        const btnWhatsFlutuante = document.getElementById('btnWhatsFlutuante');
+        const modalFormulario = document.getElementById('modalFormulario');
+        const btnFecharModal = document.getElementById('btnFecharModal');
+        const whatsappForm = document.getElementById('whatsappForm');
 
-    // Passo 2: Ao clicar no (X), fecha o formulário
-    btnFecharModal.addEventListener('click', function() {
-        modalFormulario.style.display = 'none';
-    });
+        btnWhatsFlutuante.addEventListener('click', function() {
+            modalFormulario.style.display = 'flex';
+        });
 
-    // Opcional: Se o usuário clicar fora da caixa branca, também fecha o formulário
-    window.addEventListener('click', function(event) {
-        if (event.target === modalFormulario) {
+        btnFecharModal.addEventListener('click', function() {
             modalFormulario.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === modalFormulario) {
+                modalFormulario.style.display = 'none';
+            }
+        });
+
+        whatsappForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const numeroTelefone = "5583991310086"; 
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            const textoMensagem = `Olá, gostaria de fazer um contato!\n\n` +
+                                  `*Nome:* ${nome}\n` +
+                                  `*E-mail:* ${email}\n` +
+                                  `*Mensagem:* ${mensagem}`;
+
+            const textoCodificado = encodeURIComponent(textoMensagem);
+            const urlWhatsApp = `https://wa.me/${numeroTelefone}?text=${textoCodificado}`;
+
+            window.open(urlWhatsApp, '_blank');
+            modalFormulario.style.display = 'none';
+            whatsappForm.reset();
+        });
+    </script>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-light pt-5 pb-4 mt-3">
+        <div class="container text-center text-md-start">
+            <div class="row text-center text-md-start">
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-success">Alves Tecnologia</h5>
+                    <p>Soluções inteligentes em T.I.</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-success">Links</h5>
+                    <p><a href="#" class="text-light text-decoration-none hover-link">Inicio</a></p>
+                    <p><a href="#servicos" class="text-light text-decoration-none hover-link">Especialidades</a></p>
+                    <p><a href="#sobre" class="text-light text-decoration-none hover-link">Por que nós?</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-success">Contato</h5>
+                    <p><i class="fas fa-envelope me-2"></i> johanntechsuporte@gmail.com</p>
+                    <p><i class="fas fa-phone me-2"></i> +55 83 99131-0086</p>
+                </div>
+            </div>
+            <hr class="mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8 text-center text-md-start">
+                    <p class="mb-0" style="font-size: 10px;">
+                        &copy; <span id="anoAtual"></span> <strong>Alves Tecnologia</strong>. Todos os direitos reservados.
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-4 text-center text-md-end mt-3 mt-md-0"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("anoAtual").textContent = new Date().getFullYear();
+    </script>
+
+    <style>
+        .hover-link:hover {
+            color: #25d366 !important;
+            transition: 0.2s ease-in-out;
         }
-    });
+    </style>
 
-    // Passo 3: Envio dos dados para o WhatsApp ao clicar em Enviar
-    whatsappForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        // Seu número configurado
-        const numeroTelefone = "5583991310086"; 
-
-        const nome = document.getElementById('nome').value;
-        const email = document.getElementById('email').value;
-        const mensagem = document.getElementById('mensagem').value;
-
-        const textoMensagem = `Olá, gostaria de fazer um contato!\n\n` +
-                              `*Nome:* ${nome}\n` +
-                              `*E-mail:* ${email}\n` +
-                              `*Mensagem:* ${mensagem}`;
-
-        const textoCodificado = encodeURIComponent(textoMensagem);
-        const urlWhatsApp = `https://wa.me/${numeroTelefone}?text=${textoCodificado}`;
-
-        // Abre o WhatsApp em uma nova aba
-        window.open(urlWhatsApp, '_blank');
-
-        // Fecha o formulário após o envio
-        modalFormulario.style.display = 'none';
-        
-        // Limpa os campos do formulário para um próximo contato
-        whatsappForm.reset();
-    });
-</script>
-
-
-
-<footer class="bg-dark text-light pt-5 pb-4 mt-3">
-    <div class="container text-center text-md-start">
-        <div class="row text-center text-md-start">
-            
-            <!-- Coluna 1: Sobre a Empresa -->
-            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-success">Alves Tecnologia</h5>
-                <p>Soluções inteligentes em T.I.</p>
-            </div>
-
-            <!-- Coluna 2: Links Úteis -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-success">Links</h5>
-                <p><a href="#" class="text-light text-decoration-none hover-link">Inicio</a></p>
-                <p><a href="#servicos" class="text-light text-decoration-none hover-link">Especialidades</a></p>
-                <p><a href="#sobre" class="text-light text-decoration-none hover-link">Por que nós?</a></p>
-           
-          
-
-
-                 
-            </div>
-
-            <!-- Coluna 3: Contato -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-success">Contato</h5>
-                <p><i class="fas fa-envelope me-2"></i> johanntechsuporte@gmail.com</p>
-                <p><i class="fas fa-phone me-2"></i> +55 83 99131-0086</p>
-            </div>
-            
-        </div>
-
-        <hr class="mb-4">
-
-        <!-- Linha de Direitos Autorais e Redes Sociais -->
-        <div class="row align-items-center">
-            <div class="col-md-7 col-lg-8 text-center text-md-start">
-                <p class="mb-0" style="font-size: 10px;">
-                    &copy; <span id="anoAtual"></span> <strong>Alves Tecnologia</strong>. Todos os direitos reservados.
-                </p>
-            </div>
-
-            <div class="col-md-5 col-lg-4 text-center text-md-end mt-3 mt-md-0">
-              <!--  <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="fab fa-linkedin-in"></i></a>
-            -->
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- JavaScript para Atualizar o Ano Automaticamente -->
-<script>
-    // Captura o elemento span pelo ID e insere o ano atual obtido pelo sistema
-    document.getElementById("anoAtual").textContent = new Date().getFullYear();
-</script>
-
-<!-- Estilo Opcional apenas para efeitos visuais nos links -->
-<style>
-    .hover-link:hover {
-        color: #25d366 !important; /* Cor verde combinando com o botão do WhatsApp */
-        transition: 0.2s ease-in-out;
-    }
-</style>
-
-
-    
-
-    <script
-      src="assets/dist/js/bootstrap.bundle.min.js"
-      class="astro-vvvwv3sm"
-    ></script>
-
+    <script src="assets/dist/js/bootstrap.bundle.min.js" class="astro-vvvwv3sm"></script>
   </body>
 </html>
